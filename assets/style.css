@@ -1,0 +1,175 @@
+:root {
+  --background-color: #F5F8FF;
+  --background-accent-color: #D2D4E1;
+  --person-border-color: #C2C3D0;
+  --person-hover-color: #DCDDEC;
+  --country-list-alternate-background-color: #E6E7F7;
+  --text-accent-color: #8661A1;
+  --link-color: #8F4AA2;
+  --link-hover-color: #4D2956;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--background-color);
+  color: #000;
+  font-family: "Public Sans", sans-serif;
+  font-size: 19px;
+  line-height: 1.1;
+}
+
+p {
+  padding: .25rem 0;
+  line-height: 1.3;
+}
+
+a, a:link, a:visited {
+  color: var(--link-color);
+  text-decoration: underline;
+}
+
+a:hover, a:active {
+  color: var(--link-hover-color);
+}
+
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (min-width: 1080px) {
+  .wrapper {
+    width: 1080px;
+  }
+}
+
+.site-header {
+  margin: 0 0 1rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--background-accent-color);
+}
+
+.title {
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.country-list { }
+
+.country {
+  padding: 1.5rem 1rem;
+}
+
+.country:nth-of-type(even) {
+  background: var(--country-list-alternate-background-color);
+  border-radius: .25rem;
+}
+
+.country__name {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.country__people {
+  display: block;
+}
+
+@media (min-width: 670px) {
+  .country {
+    display: flex;
+  }
+
+  .country__name {
+    flex: 23% 0 0;
+  }
+
+  .country__people {
+    flex: 1;
+  }
+}
+
+.people-list {
+  gap: 1rem;
+}
+
+.person {
+  list-style: none;
+  margin-bottom: .5rem;
+}
+
+@media (min-width: 670px) {
+  .people-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .person {
+    margin-bottom: 0;
+    display: flex;
+    flex: 15rem 0 0;
+    width: 15rem;
+  }
+}
+
+.person__link, .person__link:link, .person__link:visited {
+  border-radius: .25rem;
+  border: 1px solid var(--person-border-color);
+  background: rgba(255,255,255,0.3);
+  color: #444;
+  display: flex;
+  flex: 1;
+  gap: .75rem;
+  padding: .7rem;
+  text-decoration: none;
+  max-width: 100%;
+}
+
+.person__link:hover {
+  background: var(--person-hover-color);
+}
+
+.person__image {
+  width: 3rem;
+  height: 3rem;
+  background: #555;
+  border-radius: .25rem;
+}
+
+.person__details {
+  flex: 1;
+  overflow: hidden;
+}
+
+.person__name, .person__account {
+  display: block;
+}
+
+.person__name {
+  font-size: 1rem;
+  font-weight: bold;
+  padding-bottom: .25rem;
+}
+
+.person__account {
+  padding-bottom: .5rem;
+  color: var(--text-accent-color);
+  overflow-wrap: break-word;
+  max-width: 100%;
+  font-size: .7rem;
+}
+
+footer, .instructions {
+  text-align: center;
+  margin: 1rem 2rem;
+  font-size: .9rem;
+}
+
+footer {
+  font-size: .85rem;
+}

@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+<div class="instructions">
+  <p>A directory of Fediverse users making government and democracy work better.</p>
+  <p>Add yourself to this page by <a href="https://github.com/JordanHatch/civictech.club">opening a pull request on GitHub</a>.</p>
+</div>
+
+{% assign countries = site.people | group_by: "country" %}
+{% assign sortedCountries = countries | sort_natural : "name" %}
+
+<ul class="country-list">
+  {% for country in sortedCountries %}
+    {% assign countryLabel = site.data.countries[country.name] | default: "Global" %}
+    <li class="country">
+      <h2 class="country__name">{{ countryLabel }}</h2>
+
+      {% assign people = country.items | sort_natural : "name" %}
+
+      <ul class="country__people people-list">
+        {% for person in people %}
+          {% include person.html
+              name=person.name
+              link=person.link
+              account=person.account
+              image=person.image %}
+        {% endfor %}
+      </ul>
+    </li>
+  {% endfor %}
+</ul>
