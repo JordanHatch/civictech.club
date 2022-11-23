@@ -4,9 +4,9 @@
   --background-color: #F5F8FF;
   --background-accent-color: #D2D4E1;
   --person-border-color: #C2C3D0;
-  --person-hover-color: #DCDDEC;
+  --person-hover-color: #e0e1ef;
   --country-list-alternate-background-color: #E6E7F7;
-  --text-accent-color: #8661A1;
+  --text-accent-color: #682697;
   --link-color: #8F4AA2;
   --link-hover-color: #4D2956;
 }
@@ -137,10 +137,13 @@ a:hover, a:active {
 }
 
 .person__image {
-  width: 3rem;
-  height: 3rem;
+  width: 3.5rem;
+  height: 3.5rem;
   background: #555;
   border-radius: .25rem;
+  color: #fff;
+  font-size: .6rem;
+  overflow: hidden;
 }
 
 .person__details {
